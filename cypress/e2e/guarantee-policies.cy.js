@@ -13,7 +13,7 @@ describe('template spec', () => {
     cy.get('textarea[id="policy_desc"]').type('YourValueHere');
     cy.get('textarea[id="policy_desc"]').should('have.value', 'YourValueHere');
 
-    cy.get('form.ant-form.ant-form-vertical.css-htwhyh').submit();
+    cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     cy.contains('Record(s) have been successfully saved.');
   })
 })
