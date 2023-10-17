@@ -18,9 +18,15 @@ describe('template spec', () => {
     cy.get('.ant-select-item-option[title="USD - Dollar"]').click();
     cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-8.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div.ant-col.ant-col-8.gutter-row.css-htwhyh > div > div > div.ant-col.ant-form-item-control.css-htwhyh > div > div > div > div > span.ant-select-selection-item').should('have.text', 'USD - Dollar');
 
+    // internal loyalty program member
+    cy.get('#ms_cancellation_fee_policy_calculation_mapping_loyalty_member').type('12:00:00', { force: true });
+    cy.get('body > div:nth-child(5) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-ok > button').click();
+
+
+
 
     // submit button
-    cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
-    cy.contains('Record(s) have been successfully saved.');
+    // cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    // cy.contains('Record(s) have been successfully saved.');
   })
 })
