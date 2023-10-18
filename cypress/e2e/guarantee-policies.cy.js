@@ -16,4 +16,17 @@ describe('template spec', () => {
     cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     cy.contains('Record(s) have been successfully saved.');
   })
+  
+  it('create new', () => {
+    cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/new')
+
+    cy.get('input[name="policy_name"]').type('YourValueHere');
+    cy.get('input[name="policy_name"]').should('have.value', 'YourValueHere');
+
+    cy.get('textarea[id="policy_desc"]').type('YourValueHere');
+    cy.get('textarea[id="policy_desc"]').should('have.value', 'YourValueHere');
+
+    cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    cy.contains('Record(s) have been successfully saved.');
+  })
 })
