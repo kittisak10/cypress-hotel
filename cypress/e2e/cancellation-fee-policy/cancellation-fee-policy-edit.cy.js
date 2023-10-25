@@ -21,21 +21,28 @@ describe('template spec', () => {
 
       cy.get("body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > form > div > div:nth-child(1) > div.ant-collapse-content.ant-collapse-content-active > div > div > div:nth-child(2) > div > div > div.ant-col.ant-form-item-control.css-htwhyh > div > div > div").click();
       // cy.get('body > div:nth-child(7) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > form > div > div:nth-child(1) > div.ant-collapse-content.ant-collapse-content-active > div > div > div:nth-child(2) > div > div > div.ant-col.ant-form-item-control.css-htwhyh > div > div > div').type('12:00:00', { force: true });
-      cy.get('body > div:nth-child(7) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-ok > button').click();
+      cy.get('body > div:nth-child(7) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-now > a').click();
   
-      // cy.get('#ms_cancellation_fee_policy_calculation_mapping_rule_to').type(8,{ force: true });
-      cy.get('input[name="ms_cancellation_fee_policy_calculation_mapping_rule_to"]').type('8');
+      cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_rule_to').clear() ;
+      cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_rule_to').type('1');
+      // cy.get('input[name="ms_cancellation_fee_policy_calculation_mapping_rule_to"]').type('8', { force: true });
   
-      cy.get('#ms_cancellation_fee_policy_calculation_mapping_time_unit').click({force: true});
+      cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_time_unit').click({force: true});
       cy.get('.ant-select-item-option[title="Days"]').click();
   
-      cy.get('#ms_cancellation_fee_policy_calculation_mapping_rule_calc_method').click();
-      cy.get('.ant-select-item-option[title="Percent of Total Stay"]').click();
-     cy.get('#ms_cancellation_fee_policy_calculation_mapping_rule_calc_val').type(10);
-  
+      cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_rule_calc_method').click({force: true});
+      cy.get('.ant-select-item-option[title="Specific Amount"]').click();
       
+      cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_rule_calc_val').clear() ;
+     cy.get('div.ant-modal-content #ms_cancellation_fee_policy_calculation_mapping_rule_calc_val').type(30);
+  
+    //  cy.get('body > div:nth-child(7) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-ok > button').click();
+    //  cy.get('div.ant-modal-content body > div:nth-child(8) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click({ force: true });
+    cy.get("body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary").click();
    
-      // cy.get('form.ant-form.ant-form-vertical.css-htwhyh').submit();
+
+
+      
       // cy.contains('Record(s) have been successfully saved.');
   
   

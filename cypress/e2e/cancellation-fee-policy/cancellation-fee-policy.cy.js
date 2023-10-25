@@ -30,6 +30,8 @@ describe('template spec', () => {
 
       cy.get('#ms_cancellation_fee_policy_calculation_mapping_guest').type('12:00:00', { force: true });
       cy.get('body > div:nth-child(7) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-ok > button').click();
+     
+      
 
       
       cy.get('#ms_cancellation_fee_policy_calculation_mapping_time_unit').click();
