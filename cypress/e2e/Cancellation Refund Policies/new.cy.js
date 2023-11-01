@@ -1,4 +1,9 @@
 describe('template spec', () => {
+  let token;
+  before(() => {
+    // Retrieve the password from the environment variable
+    token = Cypress.env('CYPRESS_SECRET_TOKEN');
+  });
 
   it("on new form load non TokenAdmin", () => {
     cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new");
@@ -7,12 +12,12 @@ describe('template spec', () => {
 
   it("on new form load have TokenAdmin", () => {
     cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new");
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
   })
 
   it('กรอกข้อมูลแค่ Policies Name', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy,policy_name"]').type('tt1');
@@ -24,7 +29,7 @@ describe('template spec', () => {
 
   it('กรอกข้อมูลแค่ Policies Description', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('textarea[id="ms_cancellation_refund_policy_policy_desc"]').type('ttt');
@@ -35,8 +40,8 @@ describe('template spec', () => {
   })
 
   it('กรอกข้อมูลครบ required fields', () => {
-  cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.viewport(1600, 1000);
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy,policy_name"]').type('tt1');
@@ -53,21 +58,21 @@ describe('template spec', () => {
   })
 
   it('กดเลือกแค่ข้อมูล Currency', () => {
-      cy.viewport(1600, 1000);
-      cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
-      cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
+    cy.viewport(1600, 1000);
+    cy.setCookie('hotel-token', token);
+    cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
-      cy.get('#ms_cancellation_refund_policy_policy_currency').click();
-      cy.get('#ms_cancellation_refund_policy_policy_currency').type('AAA - aa', { force: true }).type('{enter}');
+    cy.get('#ms_cancellation_refund_policy_policy_currency').click();
+    cy.get('#ms_cancellation_refund_policy_policy_currency').type('AAA - aa', { force: true }).type('{enter}');
 
 
-      cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
 
-    })
+  })
 
   it('พิมตัวอักษรพิมใหญ่ Policies Name พิมตัวอักษรพิมใหญ่ Policies Description', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy,policy_name"]').type('T');
@@ -82,7 +87,7 @@ describe('template spec', () => {
 
   it('พิมตัวอักษรพิเศษ Policies Description พิมตัวอักษรพิเศษ Policies Name', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy,policy_name"]').type('!@#$%^&*?');
@@ -97,7 +102,7 @@ describe('template spec', () => {
 
   it('กด timePicker: InternalLoyalty Program Members', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_loyalty_member').click();
@@ -110,7 +115,7 @@ describe('template spec', () => {
   it('กด timePicker: Other Guests', () => {
     cy.viewport(1600, 1000);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_guest').click();
     cy.get("body > div:nth-child(4) > div > div > div > div > div.ant-picker-footer > ul > li.ant-picker-now > a").click();
@@ -121,7 +126,7 @@ describe('template spec', () => {
 
   it('พิมตัวเลขหรือตัวอักษร timePicker: InternalLoyalty Program Members', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_loyalty_member').click();
@@ -134,7 +139,7 @@ describe('template spec', () => {
   it('พิมตัวเลขหรือตัวอักษร timePicker: Other Guests', () => {
     cy.viewport(1600, 1000);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_guest').click();
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_guest').type('12:00:00', { force: true });
@@ -145,7 +150,7 @@ describe('template spec', () => {
 
   it('เลือกข้อมูลแค่ To Days', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy_calculation_mapping,rule_to"]').type('1');
@@ -157,7 +162,7 @@ describe('template spec', () => {
 
   it('เลือกข้อมูลแค่ Time Unit', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_time_unit').click();
@@ -169,7 +174,7 @@ describe('template spec', () => {
 
   it('กรอกข้อมูลที่ไม่ได้มีใน Time Unit', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_time_unit').click();
@@ -179,7 +184,7 @@ describe('template spec', () => {
 
   it('เลือกข้อมูลแค่ Calculation Method', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_rule_calc_method').click();
@@ -192,7 +197,7 @@ describe('template spec', () => {
 
   it('กรอกข้อมูลเป็นตัวอักษรไทย Calculation Method', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('#ms_cancellation_refund_policy_calculation_mapping_rule_calc_method').click();
@@ -205,7 +210,7 @@ describe('template spec', () => {
 
   it('เลือกข้อมูลแค่ Calculation Value', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy_calculation_mapping,rule_calc_val"]').type('11');
@@ -217,7 +222,7 @@ describe('template spec', () => {
 
   it('กรอกข้อมูลเป็นเลขทศนิยม Calculation Value', () => {
     cy.viewport(1600, 1000);
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg2NDQ1MTEsImV4cCI6MTY5ODczMDkxMX0.2CQNf7xOAk5UtKROrsMIkZ8WWR4y5cyn31oUMLqI2Jg');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/new')
 
     cy.get('input[name="ms_cancellation_refund_policy_calculation_mapping,rule_calc_val"]').type('1.50');

@@ -1,7 +1,11 @@
 describe('template spec', () => {
-
+  let token;
+  before(() => {
+    // Retrieve the password from the environment variable
+    token = Cypress.env('CYPRESS_SECRET_TOKEN');
+  });
   it('กรอกข้อมูลแค่ Policies Name', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('input[name="policy_name"]').clear();
@@ -10,14 +14,14 @@ describe('template spec', () => {
   })
 
   it('แก้ไขข้อมูลแค่ Policies Description', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
     cy.get('textarea[id="policy_desc"]').clear();
     cy.get('textarea[id="policy_desc"]').type('edit');
     cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
   })
   it('แก้ไขข้อมูลแค่ timePicker: Internal Loyalty Program Members และ Other Guests', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#loyalty_member').click();
@@ -36,7 +40,7 @@ describe('template spec', () => {
   })
 
   it('กด Button save ฟิลเป็นค่า null', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('input[name="policy_name"]').clear();
@@ -54,7 +58,7 @@ describe('template spec', () => {
   })
 
   it('เมื่อเลือก Checkbock: Guarantee Method All', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get("#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > div > div > table > thead > tr > th.ant-table-cell.ant-table-selection-column > div > label > span > input").click();
@@ -63,7 +67,7 @@ describe('template spec', () => {
   })
 
   it('เมื่อไม่เลือก Checkbock: Guarantee Method All', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e1db1bf2-fbe7-4e91-8be0-d4ab594985ac')
 
     cy.get("#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > div > div > table > thead > tr > th.ant-table-cell.ant-table-selection-column > div > label > span > input").click();
@@ -72,7 +76,7 @@ describe('template spec', () => {
   })
 
   it('เมื่อเลือก Checkbock: Guarantee Method เพียงรายการเดียว', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get("#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td.ant-table-cell.ant-table-selection-column > label > span > input").click();
@@ -81,7 +85,7 @@ describe('template spec', () => {
   })
 
   it('เมื่อเลือก Checkbock: Guarantee Method เพียงรายการเดียวแล้วเลือกติ๊ก Webenabled ออก', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get("#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(3) > div > div > div > div > div > label").click();
@@ -89,7 +93,7 @@ describe('template spec', () => {
   })
 
   it('เมื่อทำการกรอกข้อมูล Policies Name และ Policies Description ซ้ำกับข้อมูลอื่นแล้ว save', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('input[name="policy_name"]').clear();
@@ -101,7 +105,7 @@ describe('template spec', () => {
   })
 
   it('พิมตัวเลขหรือตัวอักษร timePicker: Internal Loyalty Program Members', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#loyalty_member').click();
@@ -112,7 +116,7 @@ describe('template spec', () => {
   })
 
   it('พิมตัวเลขหรือตัวอักษร timePicker: Other Guests', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#guest').click();
@@ -123,7 +127,7 @@ describe('template spec', () => {
   })
 
   it('พิมตัวอักษรพิมใหญ่ Policies Name พิมตัวอักษรพิมใหญ่ Policies Description', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('input[name="policy_name"]').clear();
@@ -135,7 +139,7 @@ describe('template spec', () => {
   })
 
   it('พิมตัวอักษรพิเศษ Policies Description พิมตัวอักษรพิเศษ Policies Name', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('input[name="policy_name"]').clear();
@@ -151,7 +155,7 @@ describe('template spec', () => {
   })
 
   it('กด Search: policy name ', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#__next > section > main > div > div.tw-transition-all > div > div.tw-flex.tw-gap-2 > span > span > input').type('1');
@@ -160,7 +164,7 @@ describe('template spec', () => {
   })
 
   it('กด Selection page and Search value page ', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#__next > section > main > div > div.tw-transition-all > div > div:nth-child(2) > div.ant-row.ant-row-end.css-htwhyh > div > ul > li.ant-pagination-next > button').click();
@@ -170,7 +174,7 @@ describe('template spec', () => {
   })
 
   it('กด  Delete: policy ', () => {
-    cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTgxMzI5NTMsImV4cCI6MTY5ODIxOTM1M30.EIzxIc5SeIBq2dysD-0qFO5C0LgjZFyyRDrL-70RwW0');
+    cy.setCookie('hotel-token', token);
     cy.visit('https://shospitality.thesuperappcrm.com/main/guarantee-policies/e29f5a18-7ccc-415c-ae8a-a9d454585344')
 
     cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(4)').click();

@@ -1,9 +1,12 @@
 describe('template spec', () => {
   // const currentTimestamp = Cypress.moment().format('YYYY-MM-DD HH:mm:ss');
 
-    before(() => {
-      cy.setCookie('hotel-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjNDAxNDU4OS05MTRlLTRhOGUtYTgyYi1iYmQzYzMzNzFhZmIiLCJlbSI6ImFkbWluLXBvcnRhbEBlbWFpbC5jb20iLCJ1biI6ImFkbWluLXBvcnRhbCIsImZuIjoiQWRtaW4gSG9zcGl0YWxpdHkiLCJpYXQiOjE2OTg1NTQzMjQsImV4cCI6MTY5ODY0MDcyNH0.6rf8MABir72LTKD8AaOVY_xhIm_twR9kG6w-QAgC-e4');
-    });
+  let token;
+  before(() => {
+    // Retrieve the password from the environment variable
+    token = Cypress.env('CYPRESS_SECRET_TOKEN');
+  });
+
   
     
     it('create new', () => {  
