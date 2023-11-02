@@ -42,13 +42,17 @@ describe('template spec', () => {
         cy.get('input[name="email"]').should('have.value', 'abcdefg@gmail.com');
 
         
-        // cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div > div.ant-col.ant-form-item-control.css-htwhyh > div > div > span > span > span > div > div').click();
-        // cy.get('body > div:nth-child(6) > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-item.ant-select-item-option.ant-select-item-option-active > div').click();
-        // // cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div.ant-row.ant-form-item-row.css-htwhyh > div.ant-col.ant-form-item-control.css-htwhyh > div.ant-form-item-control-input > div > span > span > span > div > div').should('have.text', 'GG');
+        cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div > div.ant-col.ant-form-item-control.css-htwhyh > div > div > span > span > span > div > div').click();
+        cy.get('body > div:nth-child(6) > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-item.ant-select-item-option.ant-select-item-option-active > div').click();
+        // cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div.ant-row.ant-form-item-row.css-htwhyh > div.ant-col.ant-form-item-control.css-htwhyh > div.ant-form-item-control-input > div > span > span > span > div > div').should('have.text', 'GG');
       
-        // cy.get('#phone').click();
-        // cy.get('input[name="phone"]').type('0987654321');
-        // cy.get('input[name="phone"]').should('have.value', '09876654321');
+        cy.get('#phone').click();
+        cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div.ant-row.ant-form-item-row.css-htwhyh > div.ant-col.ant-form-item-control.css-htwhyh > div.ant-form-item-control-input > div > span > span > span').type('GG');
+        // cy.get('#rc-tabs-0-panel-0 > div > div:nth-child(2) > div.ant-collapse-content.ant-collapse-content-active > div > div:nth-child(2) > div:nth-child(2) > div > div.ant-row.ant-form-item-row.css-htwhyh > div.ant-col.ant-form-item-control.css-htwhyh > div.ant-form-item-control-input > div > span > span > span > div > div > span.ant-select-selection-item').click();
+        cy.get('body > div:nth-child(6) > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div').click({force: true});
+        
+        cy.get('input[id="phone"]').type('0987654321');
+        cy.get('input[id="phone"]').should('have.value', '0987654321');
 
 
         cy.get('#cost_per_transaction_type').click();
@@ -57,7 +61,7 @@ describe('template spec', () => {
         
         cy.get('#cost_per_transaction_amount').type(10);
 
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+        // cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
 
         cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > form > div > div.ant-tabs-nav > div.ant-tabs-nav-wrap > div > div:nth-child(2)').click();
         
@@ -69,6 +73,6 @@ describe('template spec', () => {
     
 
         cy.get('form.ant-form.ant-form-vertical.css-htwhyh').submit();
-        cy.contains('Record(s) have been successfully saved.');
+        cy.contains('Record(s) has been successfully saved.');
       })
     })
