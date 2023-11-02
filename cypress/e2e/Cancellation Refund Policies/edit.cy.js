@@ -59,35 +59,6 @@ describe('template spec', () => {
         cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(1)').click();
     })
 
-    it("กดปุ่ม Delete pofilr scroll card", () => {
-        cy.viewport(1600, 1000);
-        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
-        cy.setCookie('hotel-token', token);
-
-        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
-        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
-    })
-
-    it("กดปุ่มYes: Delete pofilr scroll card", () => {
-        cy.viewport(1600, 1000);
-        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
-        cy.setCookie('hotel-token', token);
-
-        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
-        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
-        cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button:nth-child(1)').click();
-    })
-
-    it("กดปุ่มNo: Delete pofilr scroll card", () => {
-        cy.viewport(1600, 1000);
-        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
-        cy.setCookie('hotel-token', token);
-
-        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
-        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
-        cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button:nth-child(1)').click();
-    })
-
     it('กด timePicker: InternalLoyalty Program Members', () => {
         cy.viewport(1600, 1000);
         cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
@@ -246,6 +217,35 @@ describe('template spec', () => {
 
         cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click();
 
+    })
+
+    it("กดปุ่ม Delete pofilr scroll card", () => {
+        cy.viewport(1600, 1000);
+        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
+        cy.setCookie('hotel-token', token);
+
+        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
+        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
+    })
+
+    it("กดปุ่มYes: Delete pofilr scroll card", () => {
+        cy.viewport(1600, 1000);
+        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
+        cy.setCookie('hotel-token', token);
+
+        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
+        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
+        cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button:nth-child(1)').click();
+    })
+
+    it("กดปุ่มNo: Delete pofilr scroll card", () => {
+        cy.viewport(1600, 1000);
+        cy.visit("https://shospitality.thesuperappcrm.com/main/cancellation-refund-policies/f756ee91-e136-4098-8a54-cdf4cd793db1");
+        cy.setCookie('hotel-token', token);
+
+        cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button').click();
+        cy.get('body > div:nth-child(4) > div > div > ul > li:nth-child(2)').click();
+        cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button:nth-child(1)').click();
     })
 
     it("กดปุ่ม Add New (Add New Cancellation)", () => {
