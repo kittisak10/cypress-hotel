@@ -11,6 +11,8 @@ describe('template spec', () => {
     
     it('create new', () => {  
       cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-fee-policies/new')
+      cy.setCookie('hotel-token', token);
+
       cy.get('input[name="ms_cancellation_fee_policy,policy_name"]').type('YourValueHere');
       cy.get('input[name="ms_cancellation_fee_policy,policy_name"]').should('have.value', 'YourValueHere');
   

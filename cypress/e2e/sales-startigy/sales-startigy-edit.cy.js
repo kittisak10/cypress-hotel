@@ -10,6 +10,8 @@ describe('template spec', () => {
       
       it('create new', () => {  
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/3c697981-acee-4e80-9c51-defc40908780')
+        cy.setCookie('hotel-token', token);
+
         // cy.get('input[name="sales_strategy_code"]').type('YourValueHere');
         // cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere');
         
