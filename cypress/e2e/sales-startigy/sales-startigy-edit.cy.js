@@ -32,7 +32,7 @@ describe('template spec', () => {
        
         cy.get('#rate_plan_id').click();
         
-        // cy.get('body > div:nth-child(5) > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-item.ant-select-item-option.ant-select-item-option-active > div').click('', { force: true }).type('{enter}');
+         cy.get('body > div:nth-child(5) > div > div > div.rc-virtual-list > div.rc-virtual-list-holder > div > div > div.ant-select-item.ant-select-item-option.ant-select-item-option-active > div').click('', { force: true }).type('{enter}');
         
         // cy.get('div.ant-modal-content #rate_plan_id').click();
         // cy.get('div.ant-modal-content #rate_plan_id').type('Test', { force: true }).type('{enter}');
