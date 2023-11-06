@@ -8,7 +8,8 @@ describe('template spec', () => {
 
     it('edit', () => {  
       cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-fee-policies/766655b7-5a13-4122-b29b-c258dada8c1f')
-      
+      cy.setCookie('hotel-token', token);
+
      
   
       cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-items-start.tw-snap-start > button > span > svg').click();
