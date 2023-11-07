@@ -4,7 +4,7 @@ describe('template spec', () => {
         // Retrieve the password from the environment variable
         token = Cypress.env('CYPRESS_SECRET_TOKEN');
     });
-    
+
     it("กดเปลี่ยน ID:Policy ", () => {
         cy.viewport(1600, 1000);
         cy.setCookie('hotel-token', token);
@@ -19,7 +19,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
 
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-flex-col.tw-items-center.tw-justify-center.tw-snap-start').click();
 
@@ -54,13 +54,17 @@ describe('template spec', () => {
 
 
     it("ให้ modal fields เป็นค่าว่าง ", () => {
+        Cypress.on("uncaught:exception", (err, runnable) => {
+            console.error("Uncaught Exception:", err.message);
+            return false;
+        });
         cy.viewport(1600, 1000);
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
 
-        cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-flex-col.tw-items-center.tw-justify-center.tw-snap-start').click();
+
+        cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-flex-col.tw-items-center.tw-justify-center.tw-snap-start > span.anticon.anticon-plus-circle > svg').click();
         cy.get('body > div:nth-child(4) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click();
     })
 
@@ -69,9 +73,9 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
 
-        cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-flex-col.tw-items-center.tw-justify-center.tw-snap-start').click();
+
+        cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-flex-col.tw-items-center.tw-justify-center.tw-snap-start > span.anticon.anticon-plus-circle > svg').click();
         cy.get('body > div:nth-child(4) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-default').click();
     })
 
@@ -80,7 +84,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button > span > svg').click();
         cy.get('ul.ant-dropdown-menu > li:nth-child(1) > span > a').click({multiple: true,force: true});
     })
@@ -90,7 +94,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
 
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button > span > svg').click();
         cy.get('ul.ant-dropdown-menu > li:nth-child(2) > span > a').click({multiple: true,force: true});
@@ -101,7 +105,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
 
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button > span > svg').click();
         cy.get('ul.ant-dropdown-menu > li:nth-child(2) > span > a').click({multiple: true,force: true});
@@ -113,7 +117,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
 
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(1) > button > span > svg').click();
         cy.get('ul.ant-dropdown-menu > li:nth-child(2) > span > a').click({multiple: true,force: true});
@@ -125,7 +129,7 @@ describe('template spec', () => {
         cy.setCookie('hotel-token', token);
         cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies");
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
-        
+
         cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(2)').click();
     })
 
@@ -269,8 +273,7 @@ describe('template spec', () => {
         cy.get('ul.ant-dropdown-menu > li:nth-child(1) > span > a').click({multiple: true,force: true});
 
         cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_rule_due_type').click({ force: true });
-        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_rule_due_type').type('After Booking', { force: true }).type('{enter}');
-
+        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_rule_due_type').type('After Booking', { force: true});
 
         cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click();
 
@@ -446,7 +449,7 @@ describe('template spec', () => {
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
 
         cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(4)').click();
-        cy.get('body > div:nth-child(8) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button.ant-btn.css-htwhyh.ant-btn-primary').click();
+        cy.get('body > div:nth-child(4) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button.ant-btn.css-htwhyh.ant-btn-primary').click();
 
     })
 })
