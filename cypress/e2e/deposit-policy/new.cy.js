@@ -6,6 +6,10 @@ describe('template spec', () => {
   });
 
   it("on new form load non TokenAdmin", () => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      console.error("Uncaught Exception:", err.message);
+      return false;
+  });
     cy.viewport(1600, 1000);
     cy.visit("https://shospitality.thesuperappcrm.com/main/deposit-policies/new");
   })

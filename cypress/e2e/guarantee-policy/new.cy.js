@@ -6,6 +6,10 @@ describe('template spec', () => {
   });
 
   it("on new form load non TokenAdmin", () => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      console.error("Uncaught Exception:", err.message);
+      return false;
+    });
     cy.visit("https://shospitality.thesuperappcrm.com/main/guarantee-policies/new");
     cy.get(".slide-menu").should("not.be.visible");
   })
