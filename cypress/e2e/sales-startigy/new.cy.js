@@ -7,7 +7,7 @@ describe('template spec', () => {
   });
     
       
-      it('create new', () => {  
+      it('กรอกข้อมุลครั้งเดียว', () => {  
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
         cy.setCookie('hotel-token', token);
 
@@ -39,5 +39,18 @@ describe('template spec', () => {
     
         cy.get('form.ant-form.ant-form-vertical.css-htwhyh').submit();
         // cy.contains('Record(s) have been successfully saved.');
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Code', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('#cost_per_transaction_amount').type(12);
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+    
       })
     })
