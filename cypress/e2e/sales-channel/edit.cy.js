@@ -12,7 +12,7 @@ describe('template spec', () => {
       it('create new', () => {  
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-channel')
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2)').click();
-     
+        cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').click();
         
         cy.setCookie('hotel-token', token);
   

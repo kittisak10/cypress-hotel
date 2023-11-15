@@ -12,6 +12,7 @@ describe('template spec', () => {
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy')
         // cy.get('https://shospitality.thesuperappcrm.com')
         cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2)').click();
+        cy.get('').click();
         cy.setCookie('hotel-token', token);
 
         // cy.get('input[name="sales_strategy_code"]').type('YourValueHere');

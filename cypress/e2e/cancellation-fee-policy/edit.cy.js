@@ -11,10 +11,10 @@ describe('template spec', () => {
       cy.visit('https://shospitality.thesuperappcrm.com/main/cancellation-fee-policies')
       cy.get('#__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(11) > td:nth-child(2)').click();
       // cy.setCookie('hotel-token', token);
-
+      cy.get(' #__next > section > main > div > div.tw-transition-all.tw-bg-blue-50 > div > div.ant-table-wrapper.css-htwhyh > div > div > div > div > div > table > tbody > tr:nth-child(11) > td:nth-child(2) > a > span').click();
      
-  
-      cy.get('#rc-tabs-0-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div.tw-w-60.tw-h-24.tw-rounded-lg.tw-cursor-pointer.tw-p-2.tw-flex.tw-items-start.tw-snap-start > button > span > svg').click();
+      cy.viewport(1600, 1000);
+      cy.get('#rc-tabs-1-panel-0 > div > div.ant-col.ant-col-16.css-htwhyh > div > div > div > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div.tw-overflow-x-auto.tw-flex.tw-gap-2.tw-snap-x.tw-scroll-smooth > div:nth-child(2) > button').click();
       cy.get("body > div:nth-child(4) > div > div > ul > li:nth-child(1)").click();
       // cy.get('.ant-dropdown-menu-title-content').click();
       // cy.get('body > div:nth-child(7) > div > div > ul > li:nth-child(1) > span').click(); 
