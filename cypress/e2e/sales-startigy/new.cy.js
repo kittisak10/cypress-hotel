@@ -51,7 +51,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Code เป็นภาษาไทย', () => {
@@ -65,7 +65,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Code เป็นภาษาไทย', () => {
@@ -79,7 +79,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       }) 
       it('กรอกข้อมูลแค่  Sales Strategy Code เป็นอักษรพิเศษ', () => {
@@ -93,7 +93,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_code"]').should('have.value', '+-*/');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Code เป็นค่าว่าง', () => {
@@ -103,11 +103,11 @@ describe('template spec', () => {
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
     
        
-        cy.get('input[name="sales_strategy_code"]').type('');
-        cy.get('input[name="sales_strategy_code"]').should('have.value', '');
+        cy.get('input[name="sales_strategy_code"]').type(' ');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', ' ');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Code เป็นค่าว่าง', () => {
@@ -117,11 +117,11 @@ describe('template spec', () => {
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
     
        
-        cy.get('input[name="sales_strategy_code"]').type('');
-        cy.get('input[name="sales_strategy_code"]').should('have.value', '');
+        cy.get('input[name="sales_strategy_code"]').type(' ');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', ' ');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Name', () => {
@@ -135,7 +135,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_name"]').should('have.value', 'YourValueHere3');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Name เป็นภาษาไทย', () => {
@@ -149,8 +149,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_name"]').should('have.value', 'ทดสอบ');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
-    
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
       })
       it('กรอกข้อมูลแค่  Sales Strategy Name เป็นอักษรพิเศษ', () => {
 
@@ -163,7 +162,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_name"]').should('have.value', '+-*/');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่  Sales Strategy Name เป็นค่าว่าง', () => {
@@ -177,8 +176,7 @@ describe('template spec', () => {
         cy.get('input[name="sales_strategy_name"]').should('have.value', '+-*/');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
-    
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
       })
        it('กรอกข้อมูลแค่ Comments', () => {
 
@@ -191,7 +189,7 @@ describe('template spec', () => {
         cy.get('textarea[id="comments"]').should('have.value', 'YourValueHere3');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่ Comments เป็นภาษาไทย', () => {
@@ -205,7 +203,7 @@ describe('template spec', () => {
         cy.get('textarea[id="comments"]').should('have.value', 'YourValueHere3');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่ Comments เป็นอักษรพิเศษ', () => {
@@ -219,7 +217,7 @@ describe('template spec', () => {
         cy.get('textarea[id="comments"]').should('have.value', '+-*/');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
       it('กรอกข้อมูลแค่ Comments เป็นค่าว่าง', () => {
@@ -229,11 +227,11 @@ describe('template spec', () => {
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
     
        
-        cy.get('textarea[id="comments"]').type('');
-        cy.get('textarea[id="comments"]').should('have.value', '');
+        cy.get('textarea[id="comments"]').type(' ');
+        cy.get('textarea[id="comments"]').should('have.value', ' ');
 
         
-        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > a > button').click();
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
     
       })
 
