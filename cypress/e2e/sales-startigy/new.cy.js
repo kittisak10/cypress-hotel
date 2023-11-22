@@ -7,7 +7,7 @@ describe('template spec', () => {
   });
     
       
-      it('create new', () => {  
+      it('กรอกข้อมุลครั้งเดียว', () => {  
         cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
         cy.setCookie('hotel-token', token);
 
@@ -40,4 +40,199 @@ describe('template spec', () => {
         cy.get('form.ant-form.ant-form-vertical.css-htwhyh').submit();
         // cy.contains('Record(s) have been successfully saved.');
       })
+      it('กรอกข้อมูลแค่  Sales Strategy Code', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type('YourValueHere4');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Code เป็นภาษาไทย', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type('YourValueHere4');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Code เป็นภาษาไทย', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type('YourValueHere4');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', 'YourValueHere4');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      }) 
+      it('กรอกข้อมูลแค่  Sales Strategy Code เป็นอักษรพิเศษ', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type('+-*/');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', '+-*/');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Code เป็นค่าว่าง', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type(' ');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', ' ');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Code เป็นค่าว่าง', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_code"]').type(' ');
+        cy.get('input[name="sales_strategy_code"]').should('have.value', ' ');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Name', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_name"]').type('YourValueHere3');
+        cy.get('input[name="sales_strategy_name"]').should('have.value', 'YourValueHere3');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Name เป็นภาษาไทย', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_name"]').type('ทดสอบ');
+        cy.get('input[name="sales_strategy_name"]').should('have.value', 'ทดสอบ');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Name เป็นอักษรพิเศษ', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_name"]').type('+-*/');
+        cy.get('input[name="sales_strategy_name"]').should('have.value', '+-*/');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่  Sales Strategy Name เป็นค่าว่าง', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('input[name="sales_strategy_name"]').type('+-*/');
+        cy.get('input[name="sales_strategy_name"]').should('have.value', '+-*/');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+      })
+       it('กรอกข้อมูลแค่ Comments', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('textarea[id="comments"]').type('YourValueHere3');
+        cy.get('textarea[id="comments"]').should('have.value', 'YourValueHere3');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่ Comments เป็นภาษาไทย', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('textarea[id="comments"]').type('YourValueHere3');
+        cy.get('textarea[id="comments"]').should('have.value', 'YourValueHere3');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่ Comments เป็นอักษรพิเศษ', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('textarea[id="comments"]').type('+-*/');
+        cy.get('textarea[id="comments"]').should('have.value', '+-*/');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+      it('กรอกข้อมูลแค่ Comments เป็นค่าว่าง', () => {
+
+        cy.viewport(1600, 1000);
+        cy.setCookie('hotel-token', token);
+        cy.visit('https://shospitality.thesuperappcrm.com/main/sales-strategy/new')
+    
+       
+        cy.get('textarea[id="comments"]').type(' ');
+        cy.get('textarea[id="comments"]').should('have.value', ' ');
+
+        
+        cy.get('#__next > section > main > div > div.tw-bg-blue-50 > div > div > button:nth-child(2)').click();
+    
+      })
+
     })
