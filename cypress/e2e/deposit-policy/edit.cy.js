@@ -320,7 +320,7 @@ describe('template spec', () => {
         cy.get('ul.ant-dropdown-menu > li:nth-child(1) > span > a').click({multiple: true,force: true});
 
         cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_due_type').click({ force: true });
-        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_due_type').type('Before Arrival', { force: true }).type('{enter}');
+        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_due_type').type('Before Arrival', { force: true });
 
 
         cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click();
@@ -337,7 +337,7 @@ describe('template spec', () => {
         cy.get('ul.ant-dropdown-menu > li:nth-child(1) > span > a').click({multiple: true,force: true});
 
         cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_calc_method').click({ force: true });
-        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_calc_method').type('Percent of Total Stay', { force: true }).type('{enter}');
+        cy.get('div.ant-modal-content #ms_deposit_policy_calculation_mapping_schedule_calc_method').type('Percent of Total Stay', { force: true });
 
 
         cy.get('body > div:nth-child(5) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-footer > button.ant-btn.css-htwhyh.ant-btn-primary').click();
